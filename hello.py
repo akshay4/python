@@ -1,0 +1,5 @@
+print("Hello World!")
+name = input ("")
+print ("&"*21)
+print ("your name is ",name)
+print ("#"*20)
