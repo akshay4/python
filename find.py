@@ -16,8 +16,8 @@ print(ms)
 f = a.replace("yolo","GG")
 print(f)
 i = "we are here to learn python"
-t = i.split() #by default split string from spaces
-p = i.partition('World') #Will partition string from world
+t = i.split() 
+p = i.partition('World') 
 print(t)
 print(p)
 abc = '-'.join(t)
