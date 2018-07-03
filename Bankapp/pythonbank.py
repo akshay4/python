@@ -24,7 +24,7 @@ class BankAccount:
         print("""To:Check Balance, press B\n
         Deposit Cash,  press D\n
         Withdraw Cash, press W\n
-        Delete Account press Xln
+        Delete Account press X\n
         Exit Service,  press E\n:"""),
         ans=input("").lower()
         if ans=='b':
