@@ -1,0 +1,31 @@
+import pymysql as sql
+
+try:
+    db = sql.connect(host='localhost',port=3306,user='root',password='')
+    c = db.cursor()
+
+    name = input("Enter Database Name:")
+    cmd = 'create database()'.format(name)
+    c.execute(cmd)
+    c.execute('use {}'.format(name))
+    db.commit()
+
+    tabale_name = input("Enter the table name: ")
+    n = int(input("Enter no of columns: "))
+    #d_type = ['int', 'float','timestamp','text','varchar' ]
+    data =[]
+    for var in range(n):
+        x = input('Enter field name[{}]: '.format(var+1)) 
+        data.apppend(x)
+    cmd = 'create table {}('.format(table_name)
+    col = "{} text not null"*n
+    cmd = cmd + col.format(*data)
+    cmd = cmd[:-1]
+    c.execute(cmd)
+    print("table created sucessfully")
+    db.commit()
+except Exception as e :
+    print('error in creation')
+
+
+

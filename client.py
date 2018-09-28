@@ -1,0 +1,38 @@
+import socket
+import os
+
+client = socket.socket(socket.AF_INET,socket.SOCK_STREAM) 
+
+host = '192.168.0.106'
+#host = socket.gethostbyname(socket.gethostname())
+
+port = 12345 #server descriptive
+
+client.connect((host,port))
+print("Server is ready to listen at {}:{}".format(host,port))
+#server.listen(5)
+
+print("Server is listing for clints \n\n")
+
+#client,client_addr = server.accept()
+
+#print(" Connection established with Server {}:{}".format(*server_addr))
+
+os.system('cls')
+print('\n\n\n')
+
+
+while True :
+    smsg =  client.recv(1024).decode()
+    m = 'server --> '+smsg
+    print("\t\t\t",m)
+    cmsg = input('Client --> ')
+    client.send(cmsg.encode())
+    #l = len(smsg)
+    #print(m.rjust(2*1))
+    
+    if smsg == 'bye' or cmsg == 'bye' :
+        client.close()
+        #server.close()
+        break
+
